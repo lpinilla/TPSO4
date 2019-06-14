@@ -1,0 +1,646 @@
+accept(3, 0, NULL)                      = 4
+rt_sigaction(SIGINT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7fff2ecd185c) = 551
+wait4(551, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 551
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=551, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5956fcf000
+write(1, "------------- DESAFIO ----------"..., 36) = 36
+ | 00000  2d 2d 2d 2d 2d 2d 2d 2d  2d 2d 2d 2d 2d 20 44 45  ------------- DE |
+ | 00010  53 41 46 49 4f 20 2d 2d  2d 2d 2d 2d 2d 2d 2d 2d  SAFIO ---------- |
+ | 00020  2d 2d 2d 0a                                       ---.             |
+write(1, "Bienvenidos al TP4 y felicitacio"..., 537) = 537
+ | 00000  42 69 65 6e 76 65 6e 69  64 6f 73 20 61 6c 20 54  Bienvenidos al T |
+ | 00010  50 34 20 79 20 66 65 6c  69 63 69 74 61 63 69 6f  P4 y felicitacio |
+ | 00020  6e 65 73 2c 20 79 61 20  72 65 73 6f 6c 76 69 65  nes, ya resolvie |
+ | 00030  72 6f 6e 20 65 6c 20 70  72 69 6d 65 72 20 61 63  ron el primer ac |
+ | 00040  65 72 74 69 6a 6f 2e 0a  0a 45 6e 20 65 73 74 65  ertijo...En este |
+ | 00050  20 54 50 20 64 65 62 65  72 c3 a1 6e 20 66 69 6e   TP deber..n fin |
+ | 00060  61 6c 69 7a 61 72 20 65  6c 20 6a 75 65 67 6f 20  alizar el juego  |
+ | 00070  71 75 65 20 79 61 20 63  6f 6d 65 6e 7a 61 72 6f  que ya comenzaro |
+ | 00080  6e 20 72 65 73 6f 6c 76  69 65 6e 64 6f 20 6c 6f  n resolviendo lo |
+ | 00090  73 20 64 65 73 61 66 c3  ad 6f 73 20 64 65 20 63  s desaf..os de c |
+ | 000a0  61 64 61 20 6e 69 76 65  6c 2e 0a 41 64 65 6d c3  ada nivel..Adem. |
+ | 000b0  a1 73 20 74 65 6e 64 72  c3 a1 6e 20 71 75 65 20  .s tendr..n que  |
+ | 000c0  69 6e 76 65 73 74 69 67  61 72 20 6f 74 72 61 73  investigar otras |
+ | 000d0  20 70 72 65 67 75 6e 74  61 73 20 70 61 72 61 20   preguntas para  |
+ | 000e0  72 65 73 70 6f 6e 64 65  72 20 64 75 72 61 6e 74  responder durant |
+ | 000f0  65 20 6c 61 20 64 65 66  65 6e 73 61 2e 0a 45 6c  e la defensa..El |
+ | 00100  20 64 65 73 61 66 c3 ad  6f 20 66 69 6e 61 6c 20   desaf..o final  |
+ | 00110  63 6f 6e 73 69 73 74 65  20 65 6e 20 63 72 65 61  consiste en crea |
+ | 00120  72 20 75 6e 20 73 65 72  76 69 64 6f 72 20 71 75  r un servidor qu |
+ | 00130  65 20 73 65 20 63 6f 6d  70 6f 72 74 65 20 69 67  e se comporte ig |
+ | 00140  75 61 6c 20 71 75 65 20  79 6f 2c 20 61 64 65 6d  ual que yo, adem |
+ | 00150  c3 a1 73 20 64 65 6c 20  63 6c 69 65 6e 74 65 20  ..s del cliente  |
+ | 00160  70 61 72 61 20 63 6f 6d  75 6e 69 63 61 72 73 65  para comunicarse |
+ | 00170  20 63 6f 6e 20 65 6c 20  6d 69 73 6d 6f 2e 0a 0a   con el mismo... |
+ | 00180  44 65 62 65 72 c3 a1 6e  20 65 73 74 61 72 20 61  Deber..n estar a |
+ | 00190  74 65 6e 74 6f 73 20 61  20 6c 6f 73 20 64 65 73  tentos a los des |
+ | 001a0  61 66 69 6f 73 20 6f 63  75 6c 74 6f 73 2e 0a 0a  afios ocultos... |
+ | 001b0  50 61 72 61 20 76 65 72  69 66 69 63 61 72 20 71  Para verificar q |
+ | 001c0  75 65 20 73 75 73 20 72  65 73 70 75 65 73 74 61  ue sus respuesta |
+ | 001d0  73 20 74 69 65 6e 65 6e  20 65 6c 20 66 6f 72 6d  s tienen el form |
+ | 001e0  61 74 6f 20 63 6f 72 72  65 63 74 6f 20 72 65 73  ato correcto res |
+ | 001f0  70 6f 6e 64 61 6e 20 61  20 65 73 74 65 20 64 65  pondan a este de |
+ | 00200  73 61 66 c3 ad 6f 20 63  6f 6e 20 22 65 6e 74 65  saf..o con "ente |
+ | 00210  6e 64 69 64 6f 5c 6e 22  0a                       ndido\n".        |
+write(1, "\n", 1)                       = 1
+ | 00000  0a                                                .                |
+write(1, "----- PREGUNTA PARA INVESTIGAR -"..., 37) = 37
+ | 00000  2d 2d 2d 2d 2d 20 50 52  45 47 55 4e 54 41 20 50  ----- PREGUNTA P |
+ | 00010  41 52 41 20 49 4e 56 45  53 54 49 47 41 52 20 2d  ARA INVESTIGAR - |
+ | 00020  2d 2d 2d 2d 0a                                    ----.            |
+write(1, "\302\277C\303\263mo descubrieron el protocol"..., 78) = 78
+ | 00000  c2 bf 43 c3 b3 6d 6f 20  64 65 73 63 75 62 72 69  ..C..mo descubri |
+ | 00010  65 72 6f 6e 20 65 6c 20  70 72 6f 74 6f 63 6f 6c  eron el protocol |
+ | 00020  6f 2c 20 6c 61 20 64 69  72 65 63 63 69 c3 b3 6e  o, la direcci..n |
+ | 00030  20 79 20 65 6c 20 70 75  65 72 74 6f 20 70 61 72   y el puerto par |
+ | 00040  61 20 63 6f 6e 65 63 74  61 72 73 65 3f 0a        a conectarse?.   |
+recvfrom(4, "entendido\n\0", 1023, 0, NULL, NULL) = 11
+write(1, "Respuesta correcta\n", 19)    = 19
+ | 00000  52 65 73 70 75 65 73 74  61 20 63 6f 72 72 65 63  Respuesta correc |
+ | 00010  74 61 0a                                          ta.              |
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+nanosleep({1, 0}, 0x7fff2ecd1800)       = 0
+rt_sigaction(SIGINT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7fff2ecd185c) = 553
+wait4(553, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 553
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=553, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "------------- DESAFIO ----------"..., 36) = 36
+ | 00000  2d 2d 2d 2d 2d 2d 2d 2d  2d 2d 2d 2d 2d 20 44 45  ------------- DE |
+ | 00010  53 41 46 49 4f 20 2d 2d  2d 2d 2d 2d 2d 2d 2d 2d  SAFIO ---------- |
+ | 00020  2d 2d 2d 0a                                       ---.             |
+write(1, "# \\033[D \\033[A \\033[A \\033[D \\0"..., 60) = 60
+ | 00000  23 20 5c 30 33 33 5b 44  20 5c 30 33 33 5b 41 20  # \033[D \033[A  |
+ | 00010  5c 30 33 33 5b 41 20 5c  30 33 33 5b 44 20 5c 30  \033[A \033[D \0 |
+ | 00020  33 33 5b 42 20 5c 30 33  33 5b 43 20 5c 30 33 33  33[B \033[C \033 |
+ | 00030  5b 42 20 5c 30 33 33 5b  44 20 2a 0a              [B \033[D *.     |
+write(1, "\n", 1)                       = 1
+ | 00000  0a                                                .                |
+write(1, "----- PREGUNTA PARA INVESTIGAR -"..., 37) = 37
+ | 00000  2d 2d 2d 2d 2d 20 50 52  45 47 55 4e 54 41 20 50  ----- PREGUNTA P |
+ | 00010  41 52 41 20 49 4e 56 45  53 54 49 47 41 52 20 2d  ARA INVESTIGAR - |
+ | 00020  2d 2d 2d 2d 0a                                    ----.            |
+write(1, "\302\277Qu\303\251 diferencias hay entre TCP"..., 79) = 79
+ | 00000  c2 bf 51 75 c3 a9 20 64  69 66 65 72 65 6e 63 69  ..Qu.. diferenci |
+ | 00010  61 73 20 68 61 79 20 65  6e 74 72 65 20 54 43 50  as hay entre TCP |
+ | 00020  20 79 20 55 44 50 20 79  20 65 6e 20 71 75 c3 a9   y UDP y en qu.. |
+ | 00030  20 63 61 73 6f 73 20 63  6f 6e 76 69 65 6e 65 20   casos conviene  |
+ | 00040  75 73 61 72 20 63 61 64  61 20 75 6e 6f 3f 0a     usar cada uno?.  |
+recvfrom(4, "#0854780*\n", 1023, 0, NULL, NULL) = 10
+write(1, "Respuesta correcta\n", 19)    = 19
+ | 00000  52 65 73 70 75 65 73 74  61 20 63 6f 72 72 65 63  Respuesta correc |
+ | 00010  74 61 0a                                          ta.              |
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+nanosleep({1, 0}, 0x7fff2ecd1800)       = 0
+rt_sigaction(SIGINT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7fff2ecd185c) = 555
+wait4(555, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 555
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=555, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "------------- DESAFIO ----------"..., 36) = 36
+ | 00000  2d 2d 2d 2d 2d 2d 2d 2d  2d 2d 2d 2d 2d 20 44 45  ------------- DE |
+ | 00010  53 41 46 49 4f 20 2d 2d  2d 2d 2d 2d 2d 2d 2d 2d  SAFIO ---------- |
+ | 00020  2d 2d 2d 0a                                       ---.             |
+write(1, "https://vocaroo.com/i/s19015zmR4"..., 35) = 35
+ | 00000  68 74 74 70 73 3a 2f 2f  76 6f 63 61 72 6f 6f 2e  https://vocaroo. |
+ | 00010  63 6f 6d 2f 69 2f 73 31  39 30 31 35 7a 6d 52 34  com/i/s19015zmR4 |
+ | 00020  74 38 0a                                          t8.              |
+write(1, "\n", 1)                       = 1
+ | 00000  0a                                                .                |
+write(1, "----- PREGUNTA PARA INVESTIGAR -"..., 37) = 37
+ | 00000  2d 2d 2d 2d 2d 20 50 52  45 47 55 4e 54 41 20 50  ----- PREGUNTA P |
+ | 00010  41 52 41 20 49 4e 56 45  53 54 49 47 41 52 20 2d  ARA INVESTIGAR - |
+ | 00020  2d 2d 2d 2d 0a                                    ----.            |
+write(1, "\302\277El puerto que usaron para cone"..., 110) = 110
+ | 00000  c2 bf 45 6c 20 70 75 65  72 74 6f 20 71 75 65 20  ..El puerto que  |
+ | 00010  75 73 61 72 6f 6e 20 70  61 72 61 20 63 6f 6e 65  usaron para cone |
+ | 00020  63 74 61 72 73 65 20 61  6c 20 73 65 72 76 65 72  ctarse al server |
+ | 00030  20 65 73 20 65 6c 20 6d  69 73 6d 6f 20 71 75 65   es el mismo que |
+ | 00040  20 75 73 61 6e 20 70 61  72 61 20 6d 61 6e 64 61   usan para manda |
+ | 00050  72 20 6c 61 73 20 72 65  73 70 75 65 73 74 61 73  r las respuestas |
+ | 00060  3f 20 c2 bf 50 6f 72 20  71 75 c3 a9 3f 0a        ? ..Por qu..?.   |
+recvfrom(4, "nokia\n", 1023, 0, NULL, NULL) = 6
+write(1, "Respuesta correcta\n", 19)    = 19
+ | 00000  52 65 73 70 75 65 73 74  61 20 63 6f 72 72 65 63  Respuesta correc |
+ | 00010  74 61 0a                                          ta.              |
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+nanosleep({1, 0}, 0x7fff2ecd1800)       = 0
+rt_sigaction(SIGINT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7fff2ecd185c) = 557
+wait4(557, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 557
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=557, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "------------- DESAFIO ----------"..., 36) = 36
+ | 00000  2d 2d 2d 2d 2d 2d 2d 2d  2d 2d 2d 2d 2d 20 44 45  ------------- DE |
+ | 00010  53 41 46 49 4f 20 2d 2d  2d 2d 2d 2d 2d 2d 2d 2d  SAFIO ---------- |
+ | 00020  2d 2d 2d 0a                                       ---.             |
+write(1, "EBADF... abrilo y ver\303\241s\n", 25) = 25
+ | 00000  45 42 41 44 46 2e 2e 2e  20 61 62 72 69 6c 6f 20  EBADF... abrilo  |
+ | 00010  79 20 76 65 72 c3 a1 73  0a                       y ver..s.        |
+write(5, "la respuesta a este acertijo es "..., 51) = -1 EBADF (Bad file descriptor)
+write(1, "\n", 1)                       = 1
+ | 00000  0a                                                .                |
+write(1, "----- PREGUNTA PARA INVESTIGAR -"..., 37) = 37
+ | 00000  2d 2d 2d 2d 2d 20 50 52  45 47 55 4e 54 41 20 50  ----- PREGUNTA P |
+ | 00010  41 52 41 20 49 4e 56 45  53 54 49 47 41 52 20 2d  ARA INVESTIGAR - |
+ | 00020  2d 2d 2d 2d 0a                                    ----.            |
+write(1, "\302\277Qu\303\251 \303\272til abstracci\303\263n es uti"..., 121) = 121
+ | 00000  c2 bf 51 75 c3 a9 20 c3  ba 74 69 6c 20 61 62 73  ..Qu.. ..til abs |
+ | 00010  74 72 61 63 63 69 c3 b3  6e 20 65 73 20 75 74 69  tracci..n es uti |
+ | 00020  6c 69 7a 61 64 61 20 70  61 72 61 20 63 6f 6d 75  lizada para comu |
+ | 00030  6e 69 63 61 72 73 65 20  63 6f 6e 20 73 6f 63 6b  nicarse con sock |
+ | 00040  65 74 73 3f 20 c2 bf 73  65 20 70 75 65 64 65 20  ets? ..se puede  |
+ | 00050  75 74 69 6c 69 7a 61 72  20 72 65 61 64 28 32 29  utilizar read(2) |
+ | 00060  20 79 20 77 72 69 74 65  28 32 29 20 70 61 72 61   y write(2) para |
+ | 00070  20 6f 70 65 72 61 72 3f  0a                        operar?.        |
+recvfrom(4, "cabeza de calabaza\n", 1023, 0, NULL, NULL) = 19
+write(1, "Respuesta correcta\n", 19)    = 19
+ | 00000  52 65 73 70 75 65 73 74  61 20 63 6f 72 72 65 63  Respuesta correc |
+ | 00010  74 61 0a                                          ta.              |
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+nanosleep({1, 0}, 0x7fff2ecd1800)       = 0
+rt_sigaction(SIGINT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7fff2ecd185c) = 559
+wait4(559, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 559
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=559, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "------------- DESAFIO ----------"..., 36) = 36
+ | 00000  2d 2d 2d 2d 2d 2d 2d 2d  2d 2d 2d 2d 2d 20 44 45  ------------- DE |
+ | 00010  53 41 46 49 4f 20 2d 2d  2d 2d 2d 2d 2d 2d 2d 2d  SAFIO ---------- |
+ | 00020  2d 2d 2d 0a                                       ---.             |
+write(1, "respuesta = strings[224]\n", 25) = 25
+ | 00000  72 65 73 70 75 65 73 74  61 20 3d 20 73 74 72 69  respuesta = stri |
+ | 00010  6e 67 73 5b 32 32 34 5d  0a                       ngs[224].        |
+write(1, "\n", 1)                       = 1
+ | 00000  0a                                                .                |
+write(1, "----- PREGUNTA PARA INVESTIGAR -"..., 37) = 37
+ | 00000  2d 2d 2d 2d 2d 20 50 52  45 47 55 4e 54 41 20 50  ----- PREGUNTA P |
+ | 00010  41 52 41 20 49 4e 56 45  53 54 49 47 41 52 20 2d  ARA INVESTIGAR - |
+ | 00020  2d 2d 2d 2d 0a                                    ----.            |
+write(1, "\302\277C\303\263mo garantiza TCP que los pa"..., 72) = 72
+ | 00000  c2 bf 43 c3 b3 6d 6f 20  67 61 72 61 6e 74 69 7a  ..C..mo garantiz |
+ | 00010  61 20 54 43 50 20 71 75  65 20 6c 6f 73 20 70 61  a TCP que los pa |
+ | 00020  71 75 65 74 65 73 20 6c  6c 65 67 61 6e 20 65 6e  quetes llegan en |
+ | 00030  20 6f 72 64 65 6e 20 79  20 6e 6f 20 73 65 20 70   orden y no se p |
+ | 00040  69 65 72 64 65 6e 3f 0a                           ierden?.         |
+recvfrom(4, "easter_egg\n", 1023, 0, NULL, NULL) = 11
+write(1, "Respuesta correcta\n", 19)    = 19
+ | 00000  52 65 73 70 75 65 73 74  61 20 63 6f 72 72 65 63  Respuesta correc |
+ | 00010  74 61 0a                                          ta.              |
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+nanosleep({1, 0}, 0x7fff2ecd1800)       = 0
+rt_sigaction(SIGINT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7fff2ecd185c) = 561
+wait4(561, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 561
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=561, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "------------- DESAFIO ----------"..., 36) = 36
+ | 00000  2d 2d 2d 2d 2d 2d 2d 2d  2d 2d 2d 2d 2d 20 44 45  ------------- DE |
+ | 00010  53 41 46 49 4f 20 2d 2d  2d 2d 2d 2d 2d 2d 2d 2d  SAFIO ---------- |
+ | 00020  2d 2d 2d 0a                                       ---.             |
+write(1, ".data .bss .comment ? .shstrtab "..., 48) = 48
+ | 00000  2e 64 61 74 61 20 2e 62  73 73 20 2e 63 6f 6d 6d  .data .bss .comm |
+ | 00010  65 6e 74 20 3f 20 2e 73  68 73 74 72 74 61 62 20  ent ? .shstrtab  |
+ | 00020  2e 73 79 6d 74 61 62 20  2e 73 74 72 74 61 62 0a  .symtab .strtab. |
+write(1, "\n", 1)                       = 1
+ | 00000  0a                                                .                |
+write(1, "----- PREGUNTA PARA INVESTIGAR -"..., 37) = 37
+ | 00000  2d 2d 2d 2d 2d 20 50 52  45 47 55 4e 54 41 20 50  ----- PREGUNTA P |
+ | 00010  41 52 41 20 49 4e 56 45  53 54 49 47 41 52 20 2d  ARA INVESTIGAR - |
+ | 00020  2d 2d 2d 2d 0a                                    ----.            |
+write(1, "Un servidor suele crear un nuevo"..., 111) = 111
+ | 00000  55 6e 20 73 65 72 76 69  64 6f 72 20 73 75 65 6c  Un servidor suel |
+ | 00010  65 20 63 72 65 61 72 20  75 6e 20 6e 75 65 76 6f  e crear un nuevo |
+ | 00020  20 70 72 6f 63 65 73 6f  20 6f 20 74 68 72 65 61   proceso o threa |
+ | 00030  64 20 70 61 72 61 20 61  74 65 6e 64 65 72 20 6c  d para atender l |
+ | 00040  61 73 20 63 6f 6e 65 78  69 6f 6e 65 73 20 65 6e  as conexiones en |
+ | 00050  74 72 61 6e 74 65 73 2e  20 c2 bf 51 75 c3 a9 20  trantes. ..Qu..  |
+ | 00060  63 6f 6e 76 69 65 6e 65  20 6d c3 a1 73 3f 0a     conviene m..s?.  |
+recvfrom(4, ".runme\n", 1023, 0, NULL, NULL) = 7
+write(1, "Respuesta correcta\n", 19)    = 19
+ | 00000  52 65 73 70 75 65 73 74  61 20 63 6f 72 72 65 63  Respuesta correc |
+ | 00010  74 61 0a                                          ta.              |
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+nanosleep({1, 0}, 0x7fff2ecd1800)       = 0
+rt_sigaction(SIGINT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], SA_RESTORER, 0x7f5956a3c0e0}, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7fff2ecd185c) = 563
+wait4(563, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 563
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f5956a3c0e0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=563, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "------------- DESAFIO ----------"..., 36) = 36
+ | 00000  2d 2d 2d 2d 2d 2d 2d 2d  2d 2d 2d 2d 2d 20 44 45  ------------- DE |
+ | 00010  53 41 46 49 4f 20 2d 2d  2d 2d 2d 2d 2d 2d 2d 2d  SAFIO ---------- |
+ | 00020  2d 2d 2d 0a                                       ---.             |
+write(1, "mixed fds\n", 10)             = 10
+ | 00000  6d 69 78 65 64 20 66 64  73 0a                    mixed fds.       |
+munmap(0x7f5956fcf000, 4096)            = 0
+write(2, "r", 1)                        = 1
+ | 00000  72                                                r                |
+write(1, "l", 1)                        = 1
+ | 00000  6c                                                l                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(2, "o", 1)                        = 1
+ | 00000  6f                                                o                |
+write(1, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "u", 1)                        = 1
+ | 00000  75                                                u                |
+write(2, "c", 1)                        = 1
+ | 00000  63                                                c                |
+write(1, " ", 1)                        = 1
+ | 00000  20                                                                 |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(2, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(1, "r", 1)                        = 1
+ | 00000  72                                                r                |
+write(2, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(2, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(2, "n", 1)                        = 1
+ | 00000  6e                                                n                |
+write(2, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(2, "j", 1)                        = 1
+ | 00000  6a                                                j                |
+write(2, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "c", 1)                        = 1
+ | 00000  63                                                c                |
+write(2, "m", 1)                        = 1
+ | 00000  6d                                                m                |
+write(2, "v", 1)                        = 1
+ | 00000  76                                                v                |
+write(2, "w", 1)                        = 1
+ | 00000  77                                                w                |
+write(2, "j", 1)                        = 1
+ | 00000  6a                                                j                |
+write(1, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(1, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(2, "o", 1)                        = 1
+ | 00000  6f                                                o                |
+write(2, "g", 1)                        = 1
+ | 00000  67                                                g                |
+write(2, "m", 1)                        = 1
+ | 00000  6d                                                m                |
+write(2, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "o", 1)                        = 1
+ | 00000  6f                                                o                |
+write(1, "p", 1)                        = 1
+ | 00000  70                                                p                |
+write(1, "u", 1)                        = 1
+ | 00000  75                                                u                |
+write(1, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(1, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(2, "r", 1)                        = 1
+ | 00000  72                                                r                |
+write(2, "q", 1)                        = 1
+ | 00000  71                                                q                |
+write(2, "w", 1)                        = 1
+ | 00000  77                                                w                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(1, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "w", 1)                        = 1
+ | 00000  77                                                w                |
+write(1, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "v", 1)                        = 1
+ | 00000  76                                                v                |
+write(1, " ", 1)                        = 1
+ | 00000  20                                                                 |
+write(1, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "r", 1)                        = 1
+ | 00000  72                                                r                |
+write(2, "j", 1)                        = 1
+ | 00000  6a                                                j                |
+write(2, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "z", 1)                        = 1
+ | 00000  7a                                                z                |
+write(2, "h", 1)                        = 1
+ | 00000  68                                                h                |
+write(2, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(2, "q", 1)                        = 1
+ | 00000  71                                                q                |
+write(2, "b", 1)                        = 1
+ | 00000  62                                                b                |
+write(2, "h", 1)                        = 1
+ | 00000  68                                                h                |
+write(1, " ", 1)                        = 1
+ | 00000  20                                                                 |
+write(2, "w", 1)                        = 1
+ | 00000  77                                                w                |
+write(1, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(1, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(2, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "n", 1)                        = 1
+ | 00000  6e                                                n                |
+write(2, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "p", 1)                        = 1
+ | 00000  70                                                p                |
+write(2, "m", 1)                        = 1
+ | 00000  6d                                                m                |
+write(2, "f", 1)                        = 1
+ | 00000  66                                                f                |
+write(2, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "b", 1)                        = 1
+ | 00000  62                                                b                |
+write(1, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(2, "f", 1)                        = 1
+ | 00000  66                                                f                |
+write(2, "b", 1)                        = 1
+ | 00000  62                                                b                |
+write(2, "v", 1)                        = 1
+ | 00000  76                                                v                |
+write(2, "k", 1)                        = 1
+ | 00000  6b                                                k                |
+write(2, "q", 1)                        = 1
+ | 00000  71                                                q                |
+write(1, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "m", 1)                        = 1
+ | 00000  6d                                                m                |
+write(2, "g", 1)                        = 1
+ | 00000  67                                                g                |
+write(2, "g", 1)                        = 1
+ | 00000  67                                                g                |
+write(2, "o", 1)                        = 1
+ | 00000  6f                                                o                |
+write(1, " ", 1)                        = 1
+ | 00000  20                                                                 |
+write(2, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "k", 1)                        = 1
+ | 00000  6b                                                k                |
+write(1, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "c", 1)                        = 1
+ | 00000  63                                                c                |
+write(1, "c", 1)                        = 1
+ | 00000  63                                                c                |
+write(2, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(1, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(1, "r", 1)                        = 1
+ | 00000  72                                                r                |
+write(2, "o", 1)                        = 1
+ | 00000  6f                                                o                |
+write(1, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(2, "n", 1)                        = 1
+ | 00000  6e                                                n                |
+write(2, "b", 1)                        = 1
+ | 00000  62                                                b                |
+write(2, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "c", 1)                        = 1
+ | 00000  63                                                c                |
+write(2, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(2, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(1, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(2, "x", 1)                        = 1
+ | 00000  78                                                x                |
+write(2, "m", 1)                        = 1
+ | 00000  6d                                                m                |
+write(1, "j", 1)                        = 1
+ | 00000  6a                                                j                |
+write(2, "h", 1)                        = 1
+ | 00000  68                                                h                |
+write(2, "z", 1)                        = 1
+ | 00000  7a                                                z                |
+write(2, "u", 1)                        = 1
+ | 00000  75                                                u                |
+write(2, "v", 1)                        = 1
+ | 00000  76                                                v                |
+write(2, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(1, "o", 1)                        = 1
+ | 00000  6f                                                o                |
+write(2, "h", 1)                        = 1
+ | 00000  68                                                h                |
+write(2, "d", 1)                        = 1
+ | 00000  64                                                d                |
+write(2, "k", 1)                        = 1
+ | 00000  6b                                                k                |
+write(2, "k", 1)                        = 1
+ | 00000  6b                                                k                |
+write(2, "f", 1)                        = 1
+ | 00000  66                                                f                |
+write(2, "l", 1)                        = 1
+ | 00000  6c                                                l                |
+write(2, "w", 1)                        = 1
+ | 00000  77                                                w                |
+write(2, "n", 1)                        = 1
+ | 00000  6e                                                n                |
+write(2, "k", 1)                        = 1
+ | 00000  6b                                                k                |
+write(1, " ", 1)                        = 1
+ | 00000  20                                                                 |
+write(1, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(2, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(1, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(1, " ", 1)                        = 1
+ | 00000  20                                                                 |
+write(2, "o", 1)                        = 1
+ | 00000  6f                                                o                |
+write(2, "j", 1)                        = 1
+ | 00000  6a                                                j                |
+write(2, "j", 1)                        = 1
+ | 00000  6a                                                j                |
+write(1, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(2, "n", 1)                        = 1
+ | 00000  6e                                                n                |
+write(2, "p", 1)                        = 1
+ | 00000  70                                                p                |
+write(2, "l", 1)                        = 1
+ | 00000  6c                                                l                |
+write(1, "n", 1)                        = 1
+ | 00000  6e                                                n                |
+write(2, "q", 1)                        = 1
+ | 00000  71                                                q                |
+write(2, "l", 1)                        = 1
+ | 00000  6c                                                l                |
+write(2, "x", 1)                        = 1
+ | 00000  78                                                x                |
+write(2, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(2, "c", 1)                        = 1
+ | 00000  63                                                c                |
+write(2, "c", 1)                        = 1
+ | 00000  63                                                c                |
+write(1, "d", 1)                        = 1
+ | 00000  64                                                d                |
+write(2, "v", 1)                        = 1
+ | 00000  76                                                v                |
+write(2, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "u", 1)                        = 1
+ | 00000  75                                                u                |
+write(1, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "g", 1)                        = 1
+ | 00000  67                                                g                |
+write(2, "l", 1)                        = 1
+ | 00000  6c                                                l                |
+write(2, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(2, "z", 1)                        = 1
+ | 00000  7a                                                z                |
+write(2, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(2, "p", 1)                        = 1
+ | 00000  70                                                p                |
+write(2, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(1, "t", 1)                        = 1
+ | 00000  74                                                t                |
+write(1, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(1, "r", 1)                        = 1
+ | 00000  72                                                r                |
+write(2, "c", 1)                        = 1
+ | 00000  63                                                c                |
+write(2, "w", 1)                        = 1
+ | 00000  77                                                w                |
+write(1, "m", 1)                        = 1
+ | 00000  6d                                                m                |
+write(2, "y", 1)                        = 1
+ | 00000  79                                                y                |
+write(1, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(1, "n", 1)                        = 1
+ | 00000  6e                                                n                |
+write(2, "f", 1)                        = 1
+ | 00000  66                                                f                |
+write(2, "d", 1)                        = 1
+ | 00000  64                                                d                |
+write(2, "n", 1)                        = 1
+ | 00000  6e                                                n                |
+write(2, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "z", 1)                        = 1
+ | 00000  7a                                                z                |
+write(1, "a", 1)                        = 1
+ | 00000  61                                                a                |
+write(2, "s", 1)                        = 1
+ | 00000  73                                                s                |
+write(2, "e", 1)                        = 1
+ | 00000  65                                                e                |
+write(2, "b", 1)                        = 1
+ | 00000  62                                                b                |
+write(2, "i", 1)                        = 1
+ | 00000  69                                                i                |
+write(1, "d", 1)                        = 1
+ | 00000  64                                                d                |
+write(1, "o", 1)                        = 1
+ | 00000  6f                                                o                |
+write(1, "\n", 1)                       = 1
+ | 00000  0a                                                .                |
+write(1, "\n----- PREGUNTA PARA INVESTIGAR "..., 37) = 37
+ | 00000  0a 2d 2d 2d 2d 2d 20 50  52 45 47 55 4e 54 41 20  .----- PREGUNTA  |
+ | 00010  50 41 52 41 20 49 4e 56  45 53 54 49 47 41 52 20  PARA INVESTIGAR  |
+ | 00020  2d 2d 2d 2d 2d                                    -----            |
+write(1, "\n", 1)                       = 1
+ | 00000  0a                                                .                |
+write(1, "\302\277C\303\263mo se puede implementar un "..., 101) = 101
+ | 00000  c2 bf 43 c3 b3 6d 6f 20  73 65 20 70 75 65 64 65  ..C..mo se puede |
+ | 00010  20 69 6d 70 6c 65 6d 65  6e 74 61 72 20 75 6e 20   implementar un  |
+ | 00020  73 65 72 76 69 64 6f 72  20 71 75 65 20 61 74 69  servidor que ati |
+ | 00030  65 6e 64 61 20 6d 75 63  68 61 73 20 63 6f 6e 65  enda muchas cone |
+ | 00040  78 69 6f 6e 65 73 20 73  69 6e 20 75 73 61 72 20  xiones sin usar  |
+ | 00050  70 72 6f 63 65 73 6f 73  20 6e 69 20 74 68 72 65  procesos ni thre |
+ | 00060  61 64 73 3f 0a                                    ads?.            |
+recvfrom(4,  <detached ...>
