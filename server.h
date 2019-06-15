@@ -27,12 +27,7 @@ void create_challenge();
 void do_challenge(int idx);
 void do_nothing();
 void ebadf();
-
-void create_challenge_0();
-void create_challenge_1();
-void create_challenge_2();
-void create_challenge_3();
-void create_challenge_4();
+void mix_fds();
 
 
 
