@@ -41,12 +41,8 @@ char * desafios[11] = {
      ".data .bss .comment ? .shstrtab .symtab .strtab",
      "mixed fds",
      "Tango Hotel India Sierra India Sierra Alfa Whiskey Echo Sierra Oscar Mike Echo",
-     "quine \\
-      gcc: error: quine.c: No such file or directory \\
-      gcc: fatal error: no input files \\
-      compilation terminated.",
-      "b gbdme y encontrará el valor mágico \\
-      try again",
+     "quine \\ gcc: error: quine.c: No such file or directory \\ gcc: fatal error: no input files \\ compilation terminated",
+      "b gbdme y encontrará el valor mágico \\  try again",
       "/lib/x86_64-linux-gnu/libc-2.19.s0 ?",
       
 
