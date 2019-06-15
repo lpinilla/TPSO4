@@ -41,15 +41,13 @@ int main(){
     create_connection(&sock, servaddr);
 
     listen_connection(sock, &clientfd, &client);
-    create_challenge();
     for(int i = 0; i < N_OF_CHALLENGES; i++){
         do_challenge(i);
-        while(!strncmp(buffer, challenges[i].ch_ans, sizeof(challenges[i].ch_ans))
-                || !aux){
+        while(!strncmp(buffer, answers[i], sizeof(answers[i])) || !aux){
             memset(buffer, 0, sizeof(buffer));
             read(clientfd, buffer, sizeof(buffer));
             aux = 1;
-            if(!buffer[0]) printf("Respuesta incorrecta: %s \n", buffer);
+            if(!buffer[0]) printf("Respuesta incorrecta: %s\n", buffer);
         }
         printf("Respuesta correcta\n");
         sleep(1);
@@ -94,20 +92,11 @@ void listen_connection(int sock, int * clientfd, struct sockaddr_in * client){
 }
 
 void do_challenge(int idx){
-    printf("------------ DESAFIO -----------\n");
-    printf("%s\n", challenges[idx].ch_str);
-    challenges[idx].ch_fun();
-    printf("--- PREGUNTA PARA INVESTIGAR ----\n");
-    printf("%s\n", challenges[idx].q_str);
-}
-
-void create_challenge(){
-    for (int i = 0; i < N_OF_CHALLENGES; i++) {
-        challenges[i].ch_ans = answers[i];
-        challenges[i].ch_fun = funcs[i];
-        challenges[i].ch_str = desafios[i];
-        challenges[i].q_str = preguntas[i];
-    }
+    printf("------------ DESAFIO -----------\n\n");
+    printf("%s\n", desafios[idx]);
+    funcs[idx]();
+    printf("--- PREGUNTA PARA INVESTIGAR ----\n\n");
+    printf("%s\n", preguntas[idx]);
 }
 
 void do_nothing(){}

@@ -32,9 +32,9 @@ int main(void){
 	write(sock, "nokia\n", strlen("nokia\n"));
 	sleep(1);
 	write(sock, "cabeza de calabaza\n", strlen("cabeza de calabaza\n"));
-	sleep(2);
+	sleep(1);
 	write(sock, "easter_egg\n", strlen("easter_egg\n"));
-	sleep(2);
+	sleep(1);
 	write(sock, ".runme\n", strlen(".runme\n"));
 	sleep(1);
 	write(sock, "indeterminado\n", strlen("indeterminado\n"));
