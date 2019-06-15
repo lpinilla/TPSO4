@@ -28,13 +28,13 @@ int main(void){
 	write(sock, "entendido\n", 11 * sizeof(char));
 	sleep(1);
 	write(sock, "#0854780*\n", strlen("#0854780*\n"));
-	sleep(2);
+	sleep(1);
 	write(sock, "nokia\n", strlen("nokia\n"));
 	sleep(1);
 	write(sock, "cabeza de calabaza\n", strlen("cabeza de calabaza\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "easter_egg\n", strlen("easter_egg\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, ".runme\n", strlen(".runme\n"));
 	sleep(1);
 	write(sock, "indeterminado\n", strlen("indeterminado\n"));

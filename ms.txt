@@ -1,0 +1,561 @@
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+socket
+exit
+htonl
+htons
+strncmp
+perror
+puts
+__stack_chk_fail
+listen
+printf
+memset
+bind
+read
+system
+close
+accept
+sleep
+__cxa_finalize
+__libc_start_main
+GLIBC_2.4
+GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+dH34%(
+AWAVI
+AUATL
+[]A\A]A^A_
+Respuesta incorrecta: %s 
+Respuesta correcta
+clear
+Error creating socket
+Bind failed
+Listening failed
+Server is listening
+Confirmation failed 
+Server accepted connection
+------------ DESAFIO -----------
+--- PREGUNTA PARA INVESTIGAR ----
+Bienvenidos al TP4 y felicitaciones, ya resolvieron el primer acertijo.     En este TP deber
+n finalizar el juego que ya comenzaron resolviendo los desaf
+os de cada nivel.     Adem
+s tendr
+n que investigar otras preguntas para responder durante la defensa.     El desaf
+o final consiste en crear un servidor que se comporte igual que yo, adem
+s del cliente para comunicarse con el mismo.         Deber
+n estar atentos a los desafios ocultos.         Para verificar que sus respuestas tienen el formato correcto respondan a este desaf
+o con 'ente    ndido
+entendido
+mo descubrieron el protocolo, la direcci
+n y el puerto para conectarse?
+#0854780*
+# \033[D \033[A \033[A \033[D \033[B \033[C \033[B \033[D *
+ diferencias hay entre TCP y UDP y en qu
+ casos conviene usar cada uno?
+nokia
+https://vocaroo.com/i/s19015zmR4t8
+El puerto que usaron para conectarse al server es el mismo que usan para mandar las respuestas? 
+Por qu
+cabeza de calabaza
+EBADF... abrilo y ver
+til abstracci
+n es utilizada para comunicarse con sockets? 
+se puede utilizar read(2) y write(2) para operar?
+;*3$"
+GCC: (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
+/usr/include/x86_64-linux-gnu/bits
+/usr/lib/gcc/x86_64-linux-gnu/7/include
+/usr/include/netinet
+/usr/include
+my_server.c
+types.h
+stdint-uintn.h
+stddef.h
+sockaddr.h
+socket.h
+in.h
+libio.h
+stdio.h
+unistd.h
+server.h
+socket_type.h
+>J>L>K
+_chain
+_flags2
+do_challenge
+_IO_FILE
+SOCK_DCCP
+_IO_save_end
+short int
+ch_fun
+in6_addr
+__uint16_t
+_IO_write_ptr
+_flags
+__uint32_t
+ch_str
+__u6_addr8
+__socket_type
+__environ
+_markers
+_IO_read_end
+in6addr_loopback
+ch_ans
+SOCK_CLOEXEC
+sin_family
+__in6_u
+stderr
+long long int
+create_connection
+__u6_addr16
+_lock
+client
+SOCK_DGRAM
+_cur_column
+q_str
+_IO_FILE_plus
+_pos
+sin_addr
+_sbuf
+_old_offset
+sa_family_t
+unsigned char
+SOCK_RDM
+GNU C99 7.3.0 -mtune=generic -march=x86-64 -g -std=c99 -fstack-protector-strong
+__pad4
+__pad5
+sin_zero
+create_challenge
+_IO_2_1_stdin_
+listen_connection
+_IO_marker
+_shortbuf
+s_addr
+__uint8_t
+__off64_t
+__pad2
+_IO_write_base
+_unused2
+_IO_read_ptr
+sa_data
+_IO_buf_end
+SOCK_SEQPACKET
+main
+_next
+__pad1
+size_t
+__pad3
+my_server.c
+in_addr_t
+create_challenge_1
+clientfd
+do_nothing
+create_challenge_0
+buffer
+SOCK_RAW
+ebadf
+/home/lautaro/Escritorio/SO/TPS/TPSO4/repo/TPSO4
+_IO_2_1_stderr_
+long unsigned int
+in6addr_any
+_IO_write_end
+SOCK_PACKET
+create_challenge_2
+_IO_2_1_stdout_
+_fileno
+short unsigned int
+t_Challenge
+sin_port
+__off_t
+servaddr
+_IO_buf_base
+_IO_backup_base
+stdin
+sa_family
+in_port_t
+create_challenge_3
+challenges
+_mode
+_IO_read_base
+__u6_addr32
+_vtable_offset
+SOCK_STREAM
+_IO_save_base
+sockaddr_in
+stdout
+sockaddr
+_IO_lock_t
+sock
+SOCK_NONBLOCK
+crtstuff.c
+deregister_tm_clones
+__do_global_dtors_aux
+completed.7696
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+my_server.c
+__FRAME_END__
+__init_array_end
+_DYNAMIC
+__init_array_start
+__GNU_EH_FRAME_HDR
+_GLOBAL_OFFSET_TABLE_
+__libc_csu_fini
+strncmp@@GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+puts@@GLIBC_2.2.5
+listen_connection
+create_challenge_2
+create_challenge_0
+_edata
+__stack_chk_fail@@GLIBC_2.4
+system@@GLIBC_2.2.5
+htons@@GLIBC_2.2.5
+printf@@GLIBC_2.2.5
+do_nothing
+htonl@@GLIBC_2.2.5
+memset@@GLIBC_2.2.5
+create_challenge
+close@@GLIBC_2.2.5
+do_challenge
+read@@GLIBC_2.2.5
+__libc_start_main@@GLIBC_2.2.5
+create_connection
+__data_start
+__gmon_start__
+__dso_handle
+_IO_stdin_used
+__libc_csu_init
+listen@@GLIBC_2.2.5
+create_challenge_3
+create_challenge_1
+__bss_start
+main
+bind@@GLIBC_2.2.5
+perror@@GLIBC_2.2.5
+accept@@GLIBC_2.2.5
+exit@@GLIBC_2.2.5
+challenges
+__TMC_END__
+_ITM_registerTMCloneTable
+ebadf
+sleep@@GLIBC_2.2.5
+__cxa_finalize@@GLIBC_2.2.5
+socket@@GLIBC_2.2.5
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.plt.got
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.dynamic
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+socket
+exit
+htonl
+htons
+strncmp
+perror
+puts
+__stack_chk_fail
+listen
+printf
+memset
+bind
+read
+system
+close
+accept
+sleep
+__cxa_finalize
+__libc_start_main
+GLIBC_2.4
+GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+dH34%(
+AWAVI
+AUATL
+[]A\A]A^A_
+easter_egg
+Respuesta incorrecta: %s 
+Respuesta correcta
+clear
+Error creating socket
+Bind failed
+Listening failed
+Server is listening
+Confirmation failed 
+Server accepted connection
+------------ DESAFIO -----------
+--- PREGUNTA PARA INVESTIGAR ----
+Bienvenidos al TP4 y felicitaciones, ya resolvieron el primer acertijo.     En este TP deber
+n finalizar el juego que ya comenzaron resolviendo los desaf
+os de cada nivel.     Adem
+s tendr
+n que investigar otras preguntas para responder durante la defensa.     El desaf
+o final consiste en crear un servidor que se comporte igual que yo, adem
+s del cliente para comunicarse con el mismo.         Deber
+n estar atentos a los desafios ocultos.         Para verificar que sus respuestas tienen el formato correcto respondan a este desaf
+o con 'ente    ndido
+entendido
+mo descubrieron el protocolo, la direcci
+n y el puerto para conectarse?
+#0854780*
+# \033[D \033[A \033[A \033[D \033[B \033[C \033[B \033[D *
+ diferencias hay entre TCP y UDP y en qu
+ casos conviene usar cada uno?
+nokia
+https://vocaroo.com/i/s19015zmR4t8
+El puerto que usaron para conectarse al server es el mismo que usan para mandar las respuestas? 
+Por qu
+cabeza de calabaza
+EBADF... abrilo y ver
+til abstracci
+n es utilizada para comunicarse con sockets? 
+se puede utilizar read(2) y write(2) para operar?
+;*3$"
+GCC: (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
+H len
+w aux
+/usr/include/x86_64-linux-gnu/bits
+/usr/lib/gcc/x86_64-linux-gnu/7/include
+/usr/include/netinet
+/usr/include
+my_server.c
+types.h
+stdint-uintn.h
+stddef.h
+sockaddr.h
+socket.h
+in.h
+libio.h
+stdio.h
+unistd.h
+server.h
+socket_type.h
+>J>L>K
+_chain
+_flags2
+do_challenge
+_IO_FILE
+SOCK_DCCP
+_IO_save_end
+short int
+ch_fun
+in6_addr
+__uint16_t
+_IO_write_ptr
+_flags
+__uint32_t
+ch_str
+__u6_addr8
+__socket_type
+__environ
+_markers
+_IO_read_end
+in6addr_loopback
+ch_ans
+SOCK_CLOEXEC
+sin_family
+__in6_u
+stderr
+long long int
+create_connection
+__u6_addr16
+_lock
+client
+SOCK_DGRAM
+_cur_column
+q_str
+_IO_FILE_plus
+_pos
+sin_addr
+_sbuf
+_old_offset
+sa_family_t
+unsigned char
+SOCK_RDM
+GNU C99 7.3.0 -mtune=generic -march=x86-64 -g -std=c99 -fstack-protector-strong
+__pad4
+__pad5
+sin_zero
+create_challenge
+_IO_2_1_stdin_
+listen_connection
+_IO_marker
+_shortbuf
+s_addr
+__uint8_t
+__off64_t
+__pad2
+_IO_write_base
+_unused2
+_IO_read_ptr
+sa_data
+_IO_buf_end
+SOCK_SEQPACKET
+main
+_next
+__pad1
+size_t
+__pad3
+my_server.c
+in_addr_t
+create_challenge_1
+clientfd
+do_nothing
+create_challenge_0
+buffer
+SOCK_RAW
+ebadf
+/home/lautaro/Escritorio/SO/TPS/TPSO4/repo/TPSO4
+_IO_2_1_stderr_
+long unsigned int
+in6addr_any
+_IO_write_end
+SOCK_PACKET
+create_challenge_2
+_IO_2_1_stdout_
+_fileno
+short unsigned int
+t_Challenge
+sin_port
+__off_t
+servaddr
+_IO_buf_base
+_IO_backup_base
+stdin
+sa_family
+in_port_t
+create_challenge_3
+challenges
+_mode
+_IO_read_base
+__u6_addr32
+_vtable_offset
+SOCK_STREAM
+_IO_save_base
+sockaddr_in
+stdout
+sockaddr
+_IO_lock_t
+sock
+SOCK_NONBLOCK
+crtstuff.c
+deregister_tm_clones
+__do_global_dtors_aux
+completed.7696
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+my_server.c
+__FRAME_END__
+__init_array_end
+_DYNAMIC
+__init_array_start
+__GNU_EH_FRAME_HDR
+_GLOBAL_OFFSET_TABLE_
+__libc_csu_fini
+strncmp@@GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+puts@@GLIBC_2.2.5
+listen_connection
+create_challenge_2
+create_challenge_0
+_edata
+__stack_chk_fail@@GLIBC_2.4
+system@@GLIBC_2.2.5
+htons@@GLIBC_2.2.5
+printf@@GLIBC_2.2.5
+do_nothing
+htonl@@GLIBC_2.2.5
+memset@@GLIBC_2.2.5
+create_challenge
+close@@GLIBC_2.2.5
+do_challenge
+read@@GLIBC_2.2.5
+__libc_start_main@@GLIBC_2.2.5
+create_connection
+__data_start
+__gmon_start__
+__dso_handle
+_IO_stdin_used
+__libc_csu_init
+listen@@GLIBC_2.2.5
+create_challenge_3
+create_challenge_1
+__bss_start
+main
+bind@@GLIBC_2.2.5
+perror@@GLIBC_2.2.5
+accept@@GLIBC_2.2.5
+exit@@GLIBC_2.2.5
+challenges
+__TMC_END__
+_ITM_registerTMCloneTable
+ebadf
+sleep@@GLIBC_2.2.5
+__cxa_finalize@@GLIBC_2.2.5
+socket@@GLIBC_2.2.5
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.plt.got
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.dynamic
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str

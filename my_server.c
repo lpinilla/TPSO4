@@ -1,5 +1,7 @@
 #include "server.h"
 
+char * eg = "easter_egg";
+
 int main(){
     char buffer[1024];
     int sock=0, clientfd = 0, aux =0;
@@ -20,6 +22,7 @@ int main(){
             if(!buffer[0]) printf("Respuesta incorrecta: %s \n", buffer);
         }
         printf("Respuesta correcta\n");
+        sleep(1);
         system("clear");
     }
     close(sock);
@@ -71,9 +74,16 @@ void do_challenge(int idx){
 void create_challenge(){
     create_challenge_0();
     create_challenge_1();
+    create_challenge_2();
+    create_challenge_3();
+    create_challenge_4();
 }
 
 void do_nothing(){}
+
+void ebadf(){
+
+}
 
 void create_challenge_0(){
     challenges[0].ch_str = "Bienvenidos al TP4 y felicitaciones, ya resolvieron el primer acertijo. \
@@ -95,5 +105,27 @@ void create_challenge_1(){
     challenges[1].ch_fun = do_nothing;
     challenges[1].ch_str = "# \\033\[D \\033\[A \\033\[A \\033\[D \\033\[B \\033\[C \\033\[B \\033\[D *";
     challenges[1].q_str = "¿Qué diferencias hay entre TCP y UDP y en qué casos conviene usar cada uno?";
-
 }
+
+void create_challenge_2(){
+    challenges[2].ch_ans = "nokia";
+    challenges[2].ch_fun = do_nothing;
+    challenges[2].ch_str = "https://vocaroo.com/i/s19015zmR4t8";
+    challenges[2].q_str = "¿El puerto que usaron para conectarse al server es el mismo que usan para mandar las respuestas? \
+¿Por qué?";
+}
+
+void create_challenge_3(){
+    challenges[3].ch_ans = "cabeza de calabaza";
+    challenges[3].ch_str = "EBADF... abrilo y verás";
+    challenges[3].q_str = "¿Qué útil abstracción es utilizada para comunicarse con sockets? ¿se puede utilizar read(2) y write(2) para operar?";
+    challenges[3].ch_fun = ebadf;
+}
+
+void create_challenge_4(){
+    challenges[4].ch_ans = "easter_egg";
+    challenges[4].ch_str = "respuesta = strings[309]"; //TODO:revisar
+    challenges[4].ch_fun = do_nothing;
+    challenges[4].q_str = "¿Cómo garantiza TCP que los paquetes llegan en orden y no se pierden?";
+}
+
