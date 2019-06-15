@@ -12,7 +12,15 @@ char * preguntas[11] = {
     "¿El puerto que usaron para conectarse al server es el mismo que usan para mandar las respuestas? \
 ¿Por qué?",
     "¿Qué útil abstracción es utilizada para comunicarse con sockets? ¿se puede utilizar read(2) y write(2) para operar?",
-    "¿Cómo garantiza TCP que los paquetes llegan en orden y no se pierden?"
+    "¿Cómo garantiza TCP que los paquetes llegan en orden y no se pierden?",
+    "Un servidor suele crear un nuevo proceso o thread para atender las conecciones entrantes. Que conviene mas?",
+    "Como se puede implementar un servidor que atienda muchas conexiones sin usar procesos ni threads?",
+    "Que aplicaciones se pueden utilizar para ver el tráfico por la red?",
+    "Sockets es un mecanismo de IPC. Que es más eficiente entre sockets y pipes?",
+    "Características del protocolo SCTP",
+    "Que es un RFC?"
+
+
 };
 
 
@@ -28,7 +36,20 @@ char * desafios[11] = {
     ndido\n' ",
      "# \\033\[D \\033\[A \\033\[A \\033\[D \\033\[B \\033\[C \\033\[B \\033\[D *",
      "https://vocaroo.com/i/s19015zmR4t8",
-     "EBADF... abrilo y verás"
+     "EBADF... abrilo y verás",
+     "respuesta = strings[224]",
+     ".data .bss .comment ? .shstrtab .symtab .strtab",
+     "mixed fds",
+     "Tango Hotel India Sierra India Sierra Alfa Whiskey Echo Sierra Oscar Mike Echo",
+     "quine \\
+      gcc: error: quine.c: No such file or directory \\
+      gcc: fatal error: no input files \\
+      compilation terminated.",
+      "b gbdme y encontrará el valor mágico \\
+      try again",
+      "/lib/x86_64-linux-gnu/libc-2.19.s0 ?",
+      
+
 };
 
 
