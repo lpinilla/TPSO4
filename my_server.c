@@ -4,7 +4,7 @@ char * eg = "easter_egg";
 
 char * answers[11] = {"entendido\n", "#8054780*\n", "nokia\n", "cabeza de calabaza\n", "easter_egg\n", ".runme\n", "indeterminado\n", "this is awesome\n", "cachiporra\n", "gdb rules\n", "/lib/x86_64-linux-gnu/ld-2.19.so\n"};
 
-void (*funcs[11])(void) = {do_nothing, do_nothing, do_nothing, ebadf, do_nothing, do_nothing, mix_fds, do_nothing, do_nothing, do_nothing, do_nothing};
+void (*funcs[11])(void) = {do_nothing, do_nothing, do_nothing, ebadf, do_nothing, do_nothing, mix_fds, do_nothing, do_nothing, gdbme, do_nothing};
 
 char * preguntas[11] = {
     "¿Cómo descubrieron el protocolo, la dirección y el puerto para conectarse?",
@@ -48,7 +48,7 @@ char * desafios[11] = {
       "b gbdme y encontrará el valor mágico \
       try again",
       "/lib/x86_64-linux-gnu/libc-2.19.s0 ?",
-      
+
 
 };
 
@@ -124,6 +124,16 @@ void do_nothing(){}
 
 void ebadf(){
 
+}
+
+void gdbme(){
+    int var = 3;
+    var = 0;
+    if(var == 0x12345){
+        printf("La respuesta es: %s", answers[9]);
+    }else{
+        printf("try again\n");
+    }
 }
 
 void mix_fds(){

@@ -20,6 +20,7 @@ void do_challenge(int idx);
 void do_nothing();
 void ebadf();
 void mix_fds();
+void gdbme();
 
 
 
