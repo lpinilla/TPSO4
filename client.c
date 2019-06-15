@@ -24,10 +24,11 @@ int main(void){
 		perror("Connection failed\n");
 		exit(EXIT_FAILURE);
 	}
+    sleep(1);
 	write(sock, "entendido\n", 11 * sizeof(char));
 	sleep(1);
 	write(sock, "#0854780*\n", strlen("#0854780*\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "nokia\n", strlen("nokia\n"));
 	sleep(1);
 	write(sock, "cabeza de calabaza\n", strlen("cabeza de calabaza\n"));

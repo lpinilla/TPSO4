@@ -2,18 +2,25 @@
 
 int main(){
     char buffer[1024];
-    int sock, clientfd = 0;
+    int sock=0, clientfd = 0, aux =0;
 
     struct sockaddr_in servaddr, client;
 
     create_connection(&sock, servaddr);
 
     listen_connection(sock, &clientfd, &client);
-
-    for(int i = 0; i < 11; i++){
-        memset(buffer, 0, sizeof(buffer));
-        read(clientfd, buffer, sizeof(buffer));
-        printf("%s", buffer);
+    create_challenge();
+    for(int i = 0; i < N_OF_CHALLENGES; i++){
+        do_challenge(i);
+        while(!strncmp(buffer, challenges[i].ch_ans, sizeof(challenges[i].ch_ans))
+                || !aux){
+            memset(buffer, 0, sizeof(buffer));
+            read(clientfd, buffer, sizeof(buffer));
+            aux = 1;
+            if(!buffer[0]) printf("Respuesta incorrecta: %s \n", buffer);
+        }
+        printf("Respuesta correcta\n");
+        system("clear");
     }
     close(sock);
 }
@@ -51,4 +58,42 @@ void listen_connection(int sock, int * clientfd, struct sockaddr_in * client){
         exit(EXIT_FAILURE);
     }
     printf("Server accepted connection\n");
+}
+
+void do_challenge(int idx){
+    printf("------------ DESAFIO -----------\n");
+    printf("%s\n", challenges[idx].ch_str);
+    challenges[idx].ch_fun();
+    printf("--- PREGUNTA PARA INVESTIGAR ----\n");
+    printf("%s\n", challenges[idx].q_str);
+}
+
+void create_challenge(){
+    create_challenge_0();
+    create_challenge_1();
+}
+
+void do_nothing(){}
+
+void create_challenge_0(){
+    challenges[0].ch_str = "Bienvenidos al TP4 y felicitaciones, ya resolvieron el primer acertijo. \
+    En este TP deberán finalizar el juego que ya comenzaron resolviendo los desafíos de cada nivel. \
+    Además tendrán que investigar otras preguntas para responder durante la defensa. \
+    El desafío final consiste en crear un servidor que se comporte igual que yo, además del cliente para comunicarse con el mismo. \
+    \
+    Deberán estar atentos a los desafios ocultos. \
+    \
+    Para verificar que sus respuestas tienen el formato correcto respondan a este desafío con 'ente\
+    ndido\n' ";
+    challenges[0].ch_ans = "entendido\n";
+    challenges[0].ch_fun = do_nothing;
+    challenges[0].q_str = "¿Cómo descubrieron el protocolo, la dirección y el puerto para conectarse?";
+}
+
+void create_challenge_1(){
+    challenges[1].ch_ans = "#0854780*";
+    challenges[1].ch_fun = do_nothing;
+    challenges[1].ch_str = "# \\033\[D \\033\[A \\033\[A \\033\[D \\033\[B \\033\[C \\033\[B \\033\[D *";
+    challenges[1].q_str = "¿Qué diferencias hay entre TCP y UDP y en qué casos conviene usar cada uno?";
+
 }
