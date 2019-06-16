@@ -24,29 +24,29 @@ int main(void){
 		perror("Connection failed\n");
 		exit(EXIT_FAILURE);
 	}
-    sleep(1);
-	write(sock, "entendido3\n", 11 * sizeof(char));
-	sleep(1);
+    sleep(2);
+	write(sock, "entendido\n", 11 * sizeof(char));
+	sleep(2);
 	write(sock, "#0854780*\n", strlen("#0854780*\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "nokia\n", strlen("nokia\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "cabeza de calabaza\n", strlen("cabeza de calabaza\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "easter_egg\n", strlen("easter_egg\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, ".runme\n", strlen(".runme\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "indeterminado\n", strlen("indeterminado\n"));
 	sleep(2);
 	write(sock, "this is awesome\n", strlen("this is awesome\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "cachiporra\n", strlen("cachiporra\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "gdb rules\n", strlen("gdb rules\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "/lib/x86_64-linux-gnu/ld-2.19.so\n", strlen("/lib/x86_64-linux-gnu/ld-2.19.so\n"));
-	sleep(1);
+	sleep(2);
 
 	//Para poder ir probando respuestas
 	/*while(1){

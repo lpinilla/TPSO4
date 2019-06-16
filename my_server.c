@@ -2,7 +2,7 @@
 
 char * eg = "easter_egg";
 
-char * answers[11] = {"entendido", "#8054780*", "nokia", "cabeza de calabaza", "easter_egg", ".runme", "indeterminado", "this is awesome", "cachiporra", "gdb rules", "/lib/x86_64-linux-gnu/ld-2.19.so"};
+char * answers[11] = {"entendido\n", "#0854780*\n", "noki\n", "cabeza de calabaz\n", "easter_eg\n", ".runm\n", "indeterminad\n", "this is awesom\n", "cachiporr\n", "gdb rule\n", "/lib/x86_64-linux-gnu/ld-2.19.s\n"};
 
 void (*funcs[11])(void) = {do_nothing, do_nothing, do_nothing, ebadf, do_nothing, do_nothing, mix_fds, do_nothing, do_nothing, gdbme, do_nothing};
 
@@ -19,8 +19,6 @@ char * preguntas[11] = {
     "Sockets es un mecanismo de IPC. Que es más eficiente entre sockets y pipes?",
     "Características del protocolo SCTP",
     "Que es un RFC?"
-
-
 };
 
 
@@ -47,9 +45,7 @@ char * desafios[11] = {
     compilation terminated",
       "b gbdme y encontrará el valor mágico \
       try again",
-      "/lib/x86_64-linux-gnu/libc-2.19.s0 ?",
-
-
+      "/lib/x86_64-linux-gnu/libc-2.19.s0 ?" 
 };
 
 
@@ -63,7 +59,7 @@ int main(){
 
     listen_connection(sock, &clientfd, &client);
     for(int i = 0; i < N_OF_CHALLENGES; i++){
-        sleep(2);
+        sleep(1);
         do_challenge(i);
         do{
             memset(buffer, 0, sizeof(buffer));
