@@ -1,8 +1,8 @@
 #include "client.h"
 
 int main(void){
-	/*char buff[1024], c = 0;
-	int char_read = 0;*/
+	char buff[1024], c = 0;
+	int char_read = 0;
 	int sock;
 	struct sockaddr_in servaddr;
 
@@ -27,7 +27,7 @@ int main(void){
     sleep(1);
 	write(sock, "entendido\n", 11 * sizeof(char));
 	sleep(1);
-	write(sock, "#0854780*\n", strlen("#0854780*\n"));
+	/*write(sock, "#0854780*\n", strlen("#0854780*\n"));
 	sleep(1);
 	write(sock, "nokia\n", strlen("nokia\n"));
 	sleep(1);
@@ -38,7 +38,7 @@ int main(void){
 	write(sock, ".runme\n", strlen(".runme\n"));
 	sleep(1);
 	write(sock, "indeterminado\n", strlen("indeterminado\n"));
-	sleep(1);
+	sleep(2);
 	write(sock, "this is awesome\n", strlen("this is awesome\n"));
 	sleep(1);
 	write(sock, "cachiporra\n", strlen("cachiporra\n"));
@@ -46,9 +46,9 @@ int main(void){
 	write(sock, "gdb rules\n", strlen("gdb rules\n"));
 	sleep(1);
 	write(sock, "/lib/x86_64-linux-gnu/ld-2.19.so\n", strlen("/lib/x86_64-linux-gnu/ld-2.19.so\n"));
-	sleep(1);
+	sleep(1); */ 
 
-	/*Para poder ir probando respuestas
+	//Para poder ir probando respuestas
 	while(1){
 		c = getchar();
 		buff[char_read++] = c;
@@ -59,7 +59,7 @@ int main(void){
 			char_read = 0;
 			memset(buff, 0, sizeof(buff));
 		}
-	}*/
+	}
 
 	close(sock);
 }

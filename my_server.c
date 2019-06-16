@@ -2,7 +2,7 @@
 
 char * eg = "easter_egg";
 
-char * answers[11] = {"entendido\n", "#8054780*\n", "nokia\n", "cabeza de calabaza\n", "easter_egg\n", ".runme\n", "indeterminado\n", "this is awesome\n", "cachiporra\n", "gdb rules\n", "/lib/x86_64-linux-gnu/ld-2.19.so\n"};
+char * answers[11] = {"entendido", "#8054780*\n", "nokia\n", "cabeza de calabaza\n", "easter_egg\n", ".runme\n", "indeterminado\n", "this is awesome\n", "cachiporra\n", "gdb rules\n", "/lib/x86_64-linux-gnu/ld-2.19.so\n"};
 
 void (*funcs[11])(void) = {do_nothing, do_nothing, do_nothing, ebadf, do_nothing, do_nothing, mix_fds, do_nothing, do_nothing, gdbme, do_nothing};
 
@@ -127,7 +127,7 @@ void ebadf(){
 }
 
 void gdbme(){
-    int var = 3;
+    int var = 4;
     var = 0;
     if(var == 0x12345){
         printf("La respuesta es: %s", answers[9]);

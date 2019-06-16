@@ -1,12 +1,17 @@
-SOURCES=my_server client
+CC= gcc
+OBJ= my_server.o client.o
 GCCFLAGS= -Werror -g -std=c99
+DEPS = server.h client.h
 
-all: $(SOURCES)
+all: $(OBJ)
 
-$(SOURCES):
-	gcc $(GCCFLAGS) $@.c -o $@
+$(OBJ): $(DEPS) $(OBJ:.o=.c)
+	$(CC) $(GCCFLAGS) -c $(@:.o=.c) -o $@
+	$(CC) $(GCCFLAGS) $@ -o $(@:.o= )
+
 
 clean:
-	rm -r $(SOURCES)
+	rm -r $(OBJ)
+	rm -r $(OBJ:.o= )
 
 .PHONY: all clean
