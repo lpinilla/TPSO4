@@ -2,7 +2,7 @@
 
 char * eg = "easter_egg";
 
-char * answers[11] = {"entendido", "#8054780*\n", "nokia\n", "cabeza de calabaza\n", "easter_egg\n", ".runme\n", "indeterminado\n", "this is awesome\n", "cachiporra\n", "gdb rules\n", "/lib/x86_64-linux-gnu/ld-2.19.so\n"};
+char * answers[11] = {"entendido", "#8054780*", "nokia", "cabeza de calabaza", "easter_egg", ".runme", "indeterminado", "this is awesome", "cachiporra", "gdb rules", "/lib/x86_64-linux-gnu/ld-2.19.so"};
 
 void (*funcs[11])(void) = {do_nothing, do_nothing, do_nothing, ebadf, do_nothing, do_nothing, mix_fds, do_nothing, do_nothing, gdbme, do_nothing};
 
@@ -63,16 +63,23 @@ int main(){
 
     listen_connection(sock, &clientfd, &client);
     for(int i = 0; i < N_OF_CHALLENGES; i++){
+        sleep(2);
         do_challenge(i);
-        while(!strncmp(buffer, answers[i], sizeof(answers[i])) || !aux){
+        do{
             memset(buffer, 0, sizeof(buffer));
-            read(clientfd, buffer, sizeof(buffer));
-            aux = 1;
-            if(!buffer[0]) printf("Respuesta incorrecta: %s\n", buffer);
-        }
+            if(read(clientfd, buffer, sizeof(buffer)) == 0){
+                continue;
+            }
+            printf("answer: %s \n", buffer);
+            aux = strcmp(buffer, answers[i]);
+            if(aux != 0){
+                printf("Respuesta incorrecta %s \n", buffer);
+            }
+        }while(aux != 0);
         printf("Respuesta correcta\n");
+        printf("Contraseña: %s\n", buffer);
         sleep(1);
-        system("clear");
+        //system("clear");
     }
     close(sock);
 }

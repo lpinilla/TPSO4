@@ -25,9 +25,9 @@ int main(void){
 		exit(EXIT_FAILURE);
 	}
     sleep(1);
-	write(sock, "entendido\n", 11 * sizeof(char));
+	write(sock, "entendido3\n", 11 * sizeof(char));
 	sleep(1);
-	/*write(sock, "#0854780*\n", strlen("#0854780*\n"));
+	write(sock, "#0854780*\n", strlen("#0854780*\n"));
 	sleep(1);
 	write(sock, "nokia\n", strlen("nokia\n"));
 	sleep(1);
@@ -46,10 +46,10 @@ int main(void){
 	write(sock, "gdb rules\n", strlen("gdb rules\n"));
 	sleep(1);
 	write(sock, "/lib/x86_64-linux-gnu/ld-2.19.so\n", strlen("/lib/x86_64-linux-gnu/ld-2.19.so\n"));
-	sleep(1); */ 
+	sleep(1);
 
 	//Para poder ir probando respuestas
-	while(1){
+	/*while(1){
 		c = getchar();
 		buff[char_read++] = c;
 		if(c == '\n'){
@@ -59,7 +59,7 @@ int main(void){
 			char_read = 0;
 			memset(buff, 0, sizeof(buff));
 		}
-	}
+	}*/
 
 	close(sock);
 }
