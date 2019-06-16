@@ -21,7 +21,7 @@ void do_nothing();
 void ebadf();
 void mix_fds();
 void gdbme();
-
+void quine();
 
 
 

@@ -2,14 +2,14 @@
 
 char * eg = "easter_egg";
 
-char * answers[11] = {"entendido\n", "#0854780*\n", "noki\n", "cabeza de calabaz\n", "easter_eg\n", ".runm\n", "indeterminad\n", "this is awesom\n", "cachiporr\n", "gdb rule\n", "/lib/x86_64-linux-gnu/ld-2.19.s\n"};
+char * answers[11] = {"entendido\n", "#0854780*\n", "nokia\n", "cabeza de calabaza\n", "easter_egg\n", ".runme\n", "indeterminado\n", "this is awesome\n", "cachiporra\n", "gdb rules\n", "/lib/x86_64-linux-gnu/ld-2.19.so\n"};
 
-void (*funcs[11])(void) = {do_nothing, do_nothing, do_nothing, ebadf, do_nothing, do_nothing, mix_fds, do_nothing, do_nothing, gdbme, do_nothing};
+void (*funcs[11])(void) = {do_nothing, do_nothing, do_nothing, ebadf, do_nothing, do_nothing, mix_fds, do_nothing, quine, gdbme, do_nothing};
 
 char * preguntas[11] = {
     "¿Cómo descubrieron el protocolo, la dirección y el puerto para conectarse?",
     "¿Qué diferencias hay entre TCP y UDP y en qué casos conviene usar cada uno?",
-    "¿El puerto que usaron para conectarse al server es el mismo que usan para mandar las respuestas? \
+    "¿El puerto que usaron para conectarse al server es el mismo que usan para mandar las respuestas? \n\
 ¿Por qué?",
     "¿Qué útil abstracción es utilizada para comunicarse con sockets? ¿se puede utilizar read(2) y write(2) para operar?",
     "¿Cómo garantiza TCP que los paquetes llegan en orden y no se pierden?",
@@ -23,29 +23,26 @@ char * preguntas[11] = {
 
 
 char * desafios[11] = {
-    "Bienvenidos al TP4 y felicitaciones, ya resolvieron el primer acertijo. \
-    En este TP deberán finalizar el juego que ya comenzaron resolviendo los desafíos de cada nivel. \
-    Además tendrán que investigar otras preguntas para responder durante la defensa. \
-    El desafío final consiste en crear un servidor que se comporte igual que yo, además del cliente para comunicarse con el mismo. \
-    \
-    Deberán estar atentos a los desafios ocultos. \
-    \
-    Para verificar que sus respuestas tienen el formato correcto respondan a este desafío con 'ente\
+    "Bienvenidos al TP4 y felicitaciones, ya resolvieron el primer acertijo.\n\
+    En este TP deberán finalizar el juego que ya comenzaron resolviendo los desafíos de cada nivel. \n\
+    Además tendrán que investigar otras preguntas para responder durante la defensa. \n\
+    El desafío final consiste en crear un servidor que se comporte igual que yo, además del cliente para comunicarse con el mismo. \n\
+    \n\
+    Deberán estar atentos a los desafios ocultos. \n\
+    \n\
+    Para verificar que sus respuestas tienen el formato correcto respondan a este desafío con 'ente\n\
     ndido\n' ",
      "# \\033\[D \\033\[A \\033\[A \\033\[D \\033\[B \\033\[C \\033\[B \\033\[D *",
      "https://vocaroo.com/i/s19015zmR4t8",
      "EBADF... abrilo y verás",
-     "respuesta = strings[224]",
+     "respuesta = strings[224]", //TODO: CAMBIAR
      ".data .bss .comment ? .shstrtab .symtab .strtab",
      "mixed fds",
      "Tango Hotel India Sierra India Sierra Alfa Whiskey Echo Sierra Oscar Mike Echo",
-     "quine \
-     gcc: error: quine.c: No such file  directory \
-     gcc: fatal error: no input files \
-    compilation terminated",
-      "b gbdme y encontrará el valor mágico \
+     "quine",
+      "b gbdme y encontrará el valor mágico\n\
       try again",
-      "/lib/x86_64-linux-gnu/libc-2.19.s0 ?" 
+      "/lib/x86_64-linux-gnu/libc-2.19.s0 ?"
 };
 
 
@@ -64,7 +61,7 @@ int main(){
         do{
             memset(buffer, 0, sizeof(buffer));
             if(read(clientfd, buffer, sizeof(buffer)) == 0){
-                continue;
+                exit(EXIT_SUCCESS);
             }
             printf("answer: %s \n", buffer);
             aux = strcmp(buffer, answers[i]);
@@ -117,7 +114,7 @@ void listen_connection(int sock, int * clientfd, struct sockaddr_in * client){
 
 void do_challenge(int idx){
     printf("------------ DESAFIO -----------\n\n");
-    printf("%s\n", desafios[idx]);
+    printf("%s\n\n", desafios[idx]);
     funcs[idx]();
     printf("--- PREGUNTA PARA INVESTIGAR ----\n\n");
     printf("%s\n", preguntas[idx]);
@@ -143,4 +140,26 @@ void mix_fds(){
 
 }
 
-
+void quine(){
+    //1er buscar el archivo quine.c
+    int gcc_val = 0;
+    if(system("test -f quine.c") != 0){
+        printf("File not found\n");
+        return;
+    }
+    gcc_val = system("gcc quine.c -o quine");
+    if(gcc_val != 0){
+        perror("GCC returned:");
+        return;
+    }
+    if(system("./quine > quineout.txt") != 0){
+        perror("Error running quine");
+        return;
+    }
+    if(system("diff quineout.txt quine.c") != 0){
+        perror("not the same");
+        return;
+    }
+    printf("La respuesta es: %s \n", answers[8]);
+    return;
+}
