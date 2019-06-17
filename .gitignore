@@ -2,6 +2,3 @@
 .o
 .gdb_history
 .log
-.bash_history
-.strace
-.viminfo
