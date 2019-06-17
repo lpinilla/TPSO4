@@ -20,19 +20,19 @@ int main(void){
 	servaddr.sin_port = htons(PORT);
 
 	//connect client socket to server socket
-	if( connect(sock, (struct sockaddr *)&servaddr,sizeof(servaddr)) != 0){
+	if( connect(sock, (struct sockaddr *)&servaddr,sizeof(servaddr)) ){
 		perror("Connection failed\n");
 		exit(EXIT_FAILURE);
 	}
     sleep(2);
-	write(sock, "entendido\n", 11 * sizeof(char));
-	sleep(2);
-	write(sock, "#0854780*\n", strlen("#0854780*\n"));
-	sleep(2);
-	write(sock, "nokia\n", strlen("nokia\n"));
-	sleep(2);
-	write(sock, "cabeza de calabaza\n", strlen("cabeza de calabaza\n"));
-	sleep(2);
+	write(sock, "entendido\n", strlen("entendido\n"));
+    sleep(2);
+    write(sock, "#0854780*\n", strlen("#0854780*\n"));
+    sleep(2);
+    write(sock, "nokia\n", strlen("nokia\n"));
+    sleep(2);
+    write(sock, "cabeza de calabaza\n", strlen("cabeza de calabaza\n"));
+    sleep(2);
 	write(sock, "easter_egg\n", strlen("easter_egg\n"));
 	sleep(2);
 	write(sock, ".runme\n", strlen(".runme\n"));

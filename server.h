@@ -4,17 +4,21 @@
 #include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/socket.h> 
-#include <sys/types.h> 
+#include <sys/socket.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <string.h>
+#include <time.h>
 
-#define PORT 23423 
+
+#define PORT 23423
 #define URL "127.0.0.1"
 #define N_OF_CHALLENGES 11
+#define MAX_BUFFER_SIZE 1024
 
 void create_connection(int * sock, struct sockaddr_in servaddr);
 void listen_connection(int sock, int * clientfd, struct sockaddr_in * client);
+void run_challenges(int clientfd, int sock);
 
 void do_challenge(int idx);
 void do_nothing();

@@ -30,8 +30,7 @@ char * desafios[11] = {
     \n\
     Deberán estar atentos a los desafios ocultos. \n\
     \n\
-    Para verificar que sus respuestas tienen el formato correcto respondan a este desafío con 'ente\n\
-    ndido\n' ",
+    Para verificar que sus respuestas tienen el formato correcto respondan a este desafío con 'entendido\\n'\n",
      "# \\033\[D \\033\[A \\033\[A \\033\[D \\033\[B \\033\[C \\033\[B \\033\[D *",
      "https://vocaroo.com/i/s19015zmR4t8",
      "EBADF... abrilo y verás",
@@ -47,34 +46,39 @@ char * desafios[11] = {
 
 
 int main(){
-    char buffer[1024];
-    int sock=0, clientfd = 0, aux =0;
+    int sock=0, clientfd = 0;
 
     struct sockaddr_in servaddr, client;
 
     create_connection(&sock, servaddr);
 
     listen_connection(sock, &clientfd, &client);
+
+    run_challenges(clientfd, sock);
+
+    close(sock);
+}
+
+void run_challenges(int clientfd, int sock){
+    char buffer[MAX_BUFFER_SIZE];
+    int aux;
     for(int i = 0; i < N_OF_CHALLENGES; i++){
         sleep(1);
         do_challenge(i);
         do{
             memset(buffer, 0, sizeof(buffer));
             if(read(clientfd, buffer, sizeof(buffer)) == 0){
+                close(sock);
                 exit(EXIT_SUCCESS);
             }
-            printf("answer: %s \n", buffer);
             aux = strcmp(buffer, answers[i]);
-            if(aux != 0){
-                printf("Respuesta incorrecta %s \n", buffer);
-            }
+            if(aux != 0) printf("Respuesta incorrecta %s \n", buffer);
         }while(aux != 0);
         printf("Respuesta correcta\n");
-        printf("Contraseña: %s\n", buffer);
         sleep(1);
         //system("clear");
     }
-    close(sock);
+
 }
 
 void create_connection(int * sock, struct sockaddr_in servaddr){
@@ -137,7 +141,28 @@ void gdbme(){
 }
 
 void mix_fds(){
-
+    char * string = "qwehqwhq hdwuidhodhakjc xnbcxmnvbidpio qpiowuanbc zchkhagdqw";
+    char * correcto = "la respuesta es indeterminado";
+    char c = 0;
+    int turn = 0;
+    srand(time(NULL));
+    //reroute stderr and remove buffering from stdout
+    dup2(STDERR_FILENO, STDOUT_FILENO);
+    setvbuf(stdout, NULL, _IONBF, 0);
+    while(*string || *correcto){
+        turn = (int)(rand() %10) + 1;
+        if(*string && turn > 4){
+            fprintf(stderr, "%c", *string);
+            string++;
+        }else if(*correcto){
+            fprintf(stdout, "%c", *correcto);
+            correcto++;
+        }
+    }
+    printf("\n\n");
+    //restore stderr and restore line buffering in stdout
+    dup2(STDERR_FILENO, 1);
+    setvbuf(stdout, NULL, _IOLBF, 0);
 }
 
 void quine(){
@@ -147,15 +172,18 @@ void quine(){
         printf("File not found\n");
         return;
     }
+    //compilar
     gcc_val = system("gcc quine.c -o quine");
     if(gcc_val != 0){
         perror("GCC returned:");
         return;
     }
+    //correr y redirigir el output
     if(system("./quine > quineout.txt") != 0){
         perror("Error running quine");
         return;
     }
+    //verificar output del quine con su propio .c
     if(system("diff quineout.txt quine.c") != 0){
         perror("not the same");
         return;
