@@ -175,13 +175,13 @@ void quine(){
         return;
     }
     //compilar
-    gcc_val = system("gcc quine.c -o quine");
+    gcc_val = system("gcc quine.c -o quine.so");
     if(gcc_val != 0){
         perror("GCC returned:");
         return;
     }
     //correr y redirigir el output
-    if(system("./quine > quineout.txt") != 0){
+    if(system("./quine.so > quineout.txt") != 0){
         perror("Error running quine");
         return;
     }
