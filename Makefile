@@ -7,7 +7,7 @@ all: $(OBJ)
 
 $(OBJ): $(DEPS) $(OBJ:.o=.c)
 	$(CC) $(GCCFLAGS) -c $(@:.o=.c) -o $@
-	$(CC) $(GCCFLAGS) $@ -o $(@:.o= )
+	$(CC) $(GCCFLAGS) $@ -o $(@:.o=.so)
 
 
 clean:

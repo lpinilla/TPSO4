@@ -127,7 +127,9 @@ void do_challenge(int idx){
 void do_nothing(){}
 
 void ebadf(){
-
+    char * string = "la respuesta para este acertijo es cabeza de calabaza";
+    int fd = 5;
+    write(fd, string, strlen(string));
 }
 
 void gdbme(){
