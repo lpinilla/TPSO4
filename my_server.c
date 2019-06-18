@@ -34,8 +34,8 @@ char * desafios[11] = {
      "# \\033\[D \\033\[A \\033\[A \\033\[D \\033\[B \\033\[C \\033\[B \\033\[D *",
      "https://vocaroo.com/i/s19015zmR4t8",
      "EBADF... abrilo y verás",
-     "respuesta = strings[224]", //TODO: CAMBIAR
-     ".data .bss .comment ? .shstrtab .symtab .strtab",
+     "respuesta = strings[43]", //TODO: CAMBIAR
+     ".debug_line .debug_str ? .symtab .strtab .shstrtab",
      "mixed fds",
      "Tango Hotel India Sierra India Sierra Alfa Whiskey Echo Sierra Oscar Mike Echo",
      "quine",

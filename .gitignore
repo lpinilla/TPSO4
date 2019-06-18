@@ -1,4 +1,8 @@
-.so
-.o
+*.so
+*.o
 .gdb_history
 .log
+.*
+!my_server.so
+!.gitignore
+!runme
