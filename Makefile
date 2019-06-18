@@ -1,7 +1,7 @@
 CC= gcc
 OBJ= my_server.o client.o
 GCCFLAGS= -Werror -g -std=c99
-DEPS = server.h client.h
+DEPS = my_server.h client.h
 
 all: $(OBJ)
 	objcopy --add-section .runme=runme --set-section-flags .runme=noload,readonly my_server.so

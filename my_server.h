@@ -21,10 +21,15 @@ void listen_connection(int sock, int * clientfd, struct sockaddr_in * client);
 void run_challenges(int clientfd, int sock);
 
 void do_challenge(int idx);
+//funcion para no hacer nada y esperar respuesta
 void do_nothing();
+//funcion que genera un ebadf con un string deseado
 void ebadf();
+//funcion que mezcla los file descriptors
 void mix_fds();
+//funcion para analizar con gdb
 void gdbme();
+//funcion que verifica la existencia y el correcto funcionamiento de quine
 void quine();
 
 

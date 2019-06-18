@@ -1,4 +1,4 @@
-#include "server.h"
+#include "my_server.h"
 
 char * eg = "easter_egg";
 
@@ -34,7 +34,7 @@ char * desafios[11] = {
      "# \\033\[D \\033\[A \\033\[A \\033\[D \\033\[B \\033\[C \\033\[B \\033\[D *",
      "https://vocaroo.com/i/s19015zmR4t8",
      "EBADF... abrilo y verás",
-     "respuesta = strings[43]", //TODO: CAMBIAR
+     "respuesta = strings[43]", 
      ".debug_line .debug_str ? .symtab .strtab .shstrtab",
      "mixed fds",
      "Tango Hotel India Sierra India Sierra Alfa Whiskey Echo Sierra Oscar Mike Echo",
@@ -67,7 +67,7 @@ void run_challenges(int clientfd, int sock){
         do_challenge(i);
         do{
             memset(buffer, 0, sizeof(buffer));
-            if(read(clientfd, buffer, sizeof(buffer)) == 0){
+            if(!read(clientfd, buffer, sizeof(buffer)) ){
                 close(sock);
                 exit(EXIT_SUCCESS);
             }
@@ -190,6 +190,8 @@ void quine(){
         perror("not the same");
         return;
     }
+    system("rm quineout.txt");
+    system("rm quine");
     printf("La respuesta es: %s \n", answers[8]);
     return;
 }
