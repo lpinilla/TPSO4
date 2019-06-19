@@ -61,12 +61,13 @@ int main(){
 
 void run_challenges(int clientfd, int sock){
     char buffer[MAX_BUFFER_SIZE];
-    int aux;
+    int aux=0;
     for(int i = 0; i < N_OF_CHALLENGES; i++){
         sleep(1);
         do_challenge(i);
         do{
             memset(buffer, 0, sizeof(buffer));
+           
             if(!read(clientfd, buffer, sizeof(buffer)) ){
                 close(sock);
                 exit(EXIT_SUCCESS);
