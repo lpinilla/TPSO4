@@ -50,6 +50,9 @@ int main(){
 
     struct sockaddr_in servaddr, client;
 
+    memset(&servaddr, 0, sizeof(servaddr));
+    memset(&client, 0, sizeof(client));
+
     create_connection(&sock, servaddr);
 
     listen_connection(sock, &clientfd, &client);
@@ -66,8 +69,8 @@ void run_challenges(int clientfd, int sock){
         sleep(1);
         do_challenge(i);
         do{
-            memset(buffer, 0, sizeof(buffer));
-           
+         memset(buffer, 0, sizeof(buffer));
+
             if(!read(clientfd, buffer, sizeof(buffer)) ){
                 close(sock);
                 exit(EXIT_SUCCESS);
@@ -77,7 +80,7 @@ void run_challenges(int clientfd, int sock){
         }while(aux != 0);
         printf("Respuesta correcta\n");
         sleep(1);
-        //system("clear");
+        system("clear");
     }
 
 }

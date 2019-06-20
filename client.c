@@ -1,7 +1,7 @@
 #include "client.h"
 
-int main(void){
-	char buff[1024]={0}, c = 0;
+int main(int argc, char ** argv){
+	char buff[BUFF_SIZE], c = 0;
 	int char_read = 0;
 	int sock;
 	struct sockaddr_in servaddr;
@@ -13,7 +13,7 @@ int main(void){
 		exit(EXIT_FAILURE);
 	}
 	memset(&servaddr, 0, sizeof(servaddr));
-
+    memset(buff, 0, BUFF_SIZE * sizeof(char));
 	///assign IP_ADRESS, PORT
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = inet_addr(URL);
@@ -53,8 +53,6 @@ int main(void){
 		c = getchar();
 		buff[char_read++] = c;
 		if(c == '\n'){
-			//buff[char_read] = c;
-			
 			write(sock, buff, sizeof(buff));
 			char_read = 0;
 			memset(buff, 0, sizeof(buff));
