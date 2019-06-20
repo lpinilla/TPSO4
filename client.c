@@ -35,27 +35,23 @@ int main(int argc, char * argv[]){
     close(sock);
 }
 
+
+void set_everything(int * sock, struct sockaddr_in servaddr){
+	socket_creation(sock,servaddr);
+	servaddr.sin_family = AF_INET;
+	servaddr.sin_addr.s_addr = inet_addr(URL);
+	servaddr.sin_port = htons(PORT);
+	connect_sockets(sock,servaddr);
+}
+
 void socket_creation(int * sock,struct sockaddr_in servaddr){
 	*sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if(*sock < 0){
 		perror("Error creating the socket\n");
 		exit(EXIT_FAILURE);
-	}
-	// memset(&servaddr, 0, sizeof(servaddr));
-
-	// servaddr.sin_family = AF_INET;
-	// servaddr.sin_addr.s_addr = inet_addr(URL);
-	// servaddr.sin_port = htons(PORT);
-		
+	}		
 }
 
-void set_everything(int * sock, struct sockaddr_in servaddr){
-	socket_creation(sock,servaddr);
-			servaddr.sin_family = AF_INET;
-			servaddr.sin_addr.s_addr = inet_addr(URL);
-			servaddr.sin_port = htons(PORT);
-			connect_sockets(sock,servaddr);
-}
 
 void connect_sockets(int * sock, struct sockaddr_in servaddr){
 	if( connect(*sock, (struct sockaddr *)&servaddr,sizeof(servaddr)) ){
