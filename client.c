@@ -2,28 +2,20 @@
 
 int main(int argc, char ** argv){
 	char buff[BUFF_SIZE], c = 0;
-	int char_read = 0;
-	int sock;
+	int char_read = 0, sock;
 	struct sockaddr_in servaddr;
-
-	//creation of socket
-	sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-	if(sock < 0){
-		perror("Error creating the socket\n");
-		exit(EXIT_FAILURE);
-	}
+	
 	memset(&servaddr, 0, sizeof(servaddr));
     memset(buff, 0, BUFF_SIZE * sizeof(char));
-	///assign IP_ADRESS, PORT
+
+	socket_creation(&sock,servaddr);
+
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = inet_addr(URL);
 	servaddr.sin_port = htons(PORT);
-
-	//connect client socket to server socket
-	if( connect(sock, (struct sockaddr *)&servaddr,sizeof(servaddr)) ){
-		perror("Connection failed\n");
-		exit(EXIT_FAILURE);
-	}
+	
+	connect_sockets(&sock,servaddr);
+	
     // sleep(2);
 	// write(sock, "entendido\n", strlen("entendido\n"));
     // sleep(2);
@@ -60,4 +52,27 @@ int main(int argc, char ** argv){
 	}
 
 	close(sock);
+}
+
+void socket_creation(int * sock,struct sockaddr_in servaddr){
+	*sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	if(*sock < 0){
+		perror("Error creating the socket\n");
+		exit(EXIT_FAILURE);
+	}
+	// memset(&servaddr, 0, sizeof(servaddr));
+
+	// servaddr.sin_family = AF_INET;
+	// servaddr.sin_addr.s_addr = inet_addr(URL);
+	// servaddr.sin_port = htons(PORT);
+		
+	
+}
+
+
+void connect_sockets(int * sock, struct sockaddr_in servaddr){
+	if( connect(*sock, (struct sockaddr *)&servaddr,sizeof(servaddr)) ){
+		perror("Connection failed\n");
+		exit(EXIT_FAILURE);
+	}
 }
