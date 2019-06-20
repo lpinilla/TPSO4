@@ -21,6 +21,8 @@ void socket_creation(int * sock,struct sockaddr_in servaddr);
 void connect_sockets(int * sock,struct sockaddr_in servaddr);
 void run_answers(int sock);
 void check_answers(int sock);
+void set_everything(int * sock, struct sockaddr_in servaddr);
+
 
 
 #endif

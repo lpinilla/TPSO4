@@ -3,36 +3,36 @@
 int main(int argc, char * argv[]){
 	int sock;
 	struct sockaddr_in servaddr;
+	memset(&servaddr, 0, sizeof(servaddr));
 
 	//printf("argc: %d , argv: %s \n",argc,argv[1]);
 
-	if(argc!=2){
+	if(argc>2){
 		perror("Argument error\n");
 		exit(EXIT_FAILURE);
 	}
-	
-	memset(&servaddr, 0, sizeof(servaddr));
-
-	socket_creation(&sock,servaddr);
-
-	servaddr.sin_family = AF_INET;
-	servaddr.sin_addr.s_addr = inet_addr(URL);
-	servaddr.sin_port = htons(PORT);
-	
-	connect_sockets(&sock,servaddr);
-
-	if(strcmp(argv[1],"1")==0){ //run automatic answers
-		run_answers(sock);
-	}
-	else if(strcmp(argv[1],"respuestas")==0){ //complete answers
+	else if(argc==1){
+		set_everything(&sock,servaddr);
 		check_answers(sock);
 	}
 	else{
-		perror("Argument error\n");
-		exit(EXIT_FAILURE);
+		if(strcmp(argv[1],"1")!=0 && strcmp(argv[1],"respuestas")!=0){
+				perror("Argument error\n");
+				exit(EXIT_FAILURE);
+		}
+		else{
+			set_everything(&sock,servaddr);
+		}
+		if(strcmp(argv[1],"1")==0){ //run automatic answers
+			run_answers(sock);
+		}
+		else if(strcmp(argv[1],"respuestas")==0){ //complete answers
+			check_answers(sock);
+		}
+		
 	}
-    
-	close(sock);
+
+    close(sock);
 }
 
 void socket_creation(int * sock,struct sockaddr_in servaddr){
@@ -47,9 +47,15 @@ void socket_creation(int * sock,struct sockaddr_in servaddr){
 	// servaddr.sin_addr.s_addr = inet_addr(URL);
 	// servaddr.sin_port = htons(PORT);
 		
-	
 }
 
+void set_everything(int * sock, struct sockaddr_in servaddr){
+	socket_creation(sock,servaddr);
+			servaddr.sin_family = AF_INET;
+			servaddr.sin_addr.s_addr = inet_addr(URL);
+			servaddr.sin_port = htons(PORT);
+			connect_sockets(sock,servaddr);
+}
 
 void connect_sockets(int * sock, struct sockaddr_in servaddr){
 	if( connect(*sock, (struct sockaddr *)&servaddr,sizeof(servaddr)) ){
