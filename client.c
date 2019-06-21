@@ -31,7 +31,6 @@ int main(int argc, char * argv[]){
 		}
 		
 	}
-
     close(sock);
 }
 
@@ -42,6 +41,7 @@ void set_everything(int * sock, struct sockaddr_in servaddr){
 	servaddr.sin_addr.s_addr = inet_addr(URL);
 	servaddr.sin_port = htons(PORT);
 	connect_sockets(sock,servaddr);
+	printf("Para cerrar el cliente, escriba \"cerrar\"\n");
 }
 
 void socket_creation(int * sock,struct sockaddr_in servaddr){
@@ -91,16 +91,20 @@ void check_answers(int sock){
 	//Para poder ir probando respuestas
 	char c=0;
 	char buff[BUFF_SIZE];
-	int char_read = 0;
+	int char_read = 0,end=0;
     memset(buff, 0, BUFF_SIZE * sizeof(char));
 
-	while(1){
+	while(end!=1){
 		c = getchar();
 		buff[char_read++] = c;
+
 		if(c == '\n'){
 			write(sock, buff, sizeof(buff));
 			char_read = 0;
 			memset(buff, 0, sizeof(buff));
+		}
+		else if(strncmp(buff,"cerrar",6)==0){
+			end=1;
 		}
 	}
 }
