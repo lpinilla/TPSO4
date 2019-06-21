@@ -1,0 +1,11 @@
+entendido
+#0854780*
+nokia
+cabeza de calabaza
+easter_egg
+.runme
+indeterminado
+this is awesome
+cachiporra
+gdb rules
+/lib/x86_64-linux-gnu/ld-2.19.so
