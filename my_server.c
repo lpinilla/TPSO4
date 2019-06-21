@@ -86,7 +86,9 @@ void run_challenges(int clientfd, int sock){
 }
 
 void create_connection(int * sock, struct sockaddr_in servaddr){
+    int optval = 1;
     *sock = socket(AF_INET, SOCK_STREAM, 0);
+    setsockopt(*sock, SOL_SOCKET, SO_REUSEPORT, &optval, sizeof(optval));
     if(*sock < 0){
         perror("Error creating socket\n");
         exit(EXIT_FAILURE);
