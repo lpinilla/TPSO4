@@ -1,0 +1,6 @@
+#!/bin/bash
+while read ans
+    do echo "$ans"
+    sleep 2
+done
+
