@@ -1,6 +1,26 @@
-# TPSO4
-Trabajo Práctico N°4 para la materia Sistemas Operativos
+# Trabajo Práctico N°4 Sistemas Operativos
 
-## Parametros para client:
-Si se pasa un 1 como parametro a client, este corre las respuestas automaticamente
-Si no se pasa ningun argumento o se pasa "respuestas" como argumento, este permite al usuario ir agregando las respuestas que crea correctas.
+### Instrucciones de compilación y ejecución
+Para compilar el programa
+```bash
+    make
+```
+Para ejecutar el programa en 2 terminales
+En una terminal,
+```bash
+    ./my_server.so
+```
+En la otra
+```bash
+    ./client.so
+```
+Para correr las respuestas automaticamente, hay que reescribir este comando, con el server corriendo.
+```bash
+    while read ans; do echo "$ans"; sleep 2; done < answers.txt | ./client.so
+```
+
+### Autores
+- Lautaro Pinilla
+- Micaela Banfi 
+- Joaquin Batilana 
+- Tomas Dorado 
