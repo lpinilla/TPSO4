@@ -27,6 +27,7 @@ O para correr en la misma
     ./my_server.so &
     ./client.so
 ```
+En ambos casos, para cerrar el cliente, se debe escribir "cerrar". 
 
 Para correr las respuestas automaticamente, hay que reescribir este comando, con el server corriendo.
 
